@@ -4,7 +4,7 @@ from typing import List
 from itertools import repeat
 from concurrent.futures import ProcessPoolExecutor
 
-wait_random = __import__('0-basic_async_syntax').wait_random  # Importing wait_random from the previous file
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
@@ -22,7 +22,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     with ProcessPoolExecutor() as executor:
         # Create a list of tasks for wait_random
         tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
-        
+
         # Await all tasks concurrently
         for task in asyncio.as_completed(tasks):
             delay = await task
