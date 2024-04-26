@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""Importing wait_random from the previous python file
+"""
 import asyncio
 from typing import List
 from itertools import repeat
